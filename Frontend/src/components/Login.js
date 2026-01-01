@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './Login.css';
 
+const BACKEND_URL = "https://project21-1akh.onrender.com";
+
 function Login({ onLogin, backendUrl }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
