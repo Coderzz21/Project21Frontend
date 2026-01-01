@@ -1,0 +1,65 @@
+.file-upload {
+  position: relative;
+}
+
+.upload-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.upload-btn:hover:not(:disabled) {
+  transform: scale(1.1);
+}
+
+.upload-btn:disabled {
+  cursor: not-allowed;
+}
+
+.attach-icon {
+  font-size: 22px;
+}
+
+.upload-progress {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-ring {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #00a884 calc(var(--progress) * 1%),
+    #2a3942 calc(var(--progress) * 1%)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.progress-ring::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #202c33;
+  border-radius: 50%;
+}
+
+.progress-ring span {
+  position: relative;
+  z-index: 1;
+  font-size: 8px;
+  color: #e9edef;
+  font-weight: bold;
+}

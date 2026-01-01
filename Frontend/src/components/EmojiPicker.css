@@ -1,0 +1,36 @@
+.emoji-picker-container {
+  position: relative;
+}
+
+.emoji-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.emoji-btn:hover {
+  transform: scale(1.1);
+}
+
+.emoji-picker-wrapper {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .emoji-picker-wrapper {
+    left: -10px;
+    right: auto;
+  }
+}
