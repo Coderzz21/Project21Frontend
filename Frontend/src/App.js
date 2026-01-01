@@ -4,7 +4,7 @@ import Login from './components/Login';
 import Chat from './components/Chat';
 import './App.css';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'https://project21-1akh.onrender.com';
 
 function App() {
   const [socket, setSocket] = useState(null);
