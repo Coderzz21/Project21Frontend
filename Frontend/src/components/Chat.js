@@ -171,11 +171,11 @@ function Chat({ socket, currentUser, selectedUser, onlineUsers, backendUrl, onBa
           <div className="chat-user-details">
             <span className="chat-username">{selectedUser.displayName}</span>
             <span className="chat-status">
-              {peerTyping 
-                ? 'typing...' 
-                : onlineUsers.includes(selectedUser.id) 
-                  ? 'online' 
-                  : 'offline'}
+              {peerTyping
+                ? 'typing...'
+                : onlineUsers.includes(selectedUser.id)
+                  ? 'online'
+                  : formatLastSeen(selectedUser.lastSeen)}
             </span>
           </div>
         </div>

@@ -52,7 +52,7 @@ function UserList({ users, onlineUsers, selectedUser, onSelectUser, currentUser,
             <div className="user-details">
               <span className="name">{user.displayName}</span>
               <span className="status">
-                {onlineUsers.includes(user.id) ? 'Online' : `Last seen ${formatLastSeen(user.lastSeen)}`}
+                {onlineUsers.includes(user.id) ? 'Online' : formatLastSeen(user.lastSeen)}
               </span>
             </div>
             {unreadMessages[user.id] > 0 && (

@@ -35,6 +35,19 @@ function App() {
 
       newSocket.on('online_users', (users) => {
         setOnlineUsers(users);
+        // Refresh user data to get updated lastSeen times
+        fetch(`${BACKEND_URL}/api/users`)
+          .then(res => res.json())
+          .then(data => {
+            // Update selectedUser with latest data if needed
+            if (selectedUser) {
+              const updatedUser = data.find(u => u.id === selectedUser.id);
+              if (updatedUser) {
+                setSelectedUser(updatedUser);
+              }
+            }
+          })
+          .catch(err => console.error('Error refreshing users:', err));
       });
 
       setSocket(newSocket);
