@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './UserList.css';
+import { formatLastSeen } from '../utils/timeUtils';
 
 function UserList({ users, onlineUsers, selectedUser, onSelectUser, currentUser, socket }) {
   const [unreadMessages, setUnreadMessages] = useState({});
@@ -51,7 +52,7 @@ function UserList({ users, onlineUsers, selectedUser, onSelectUser, currentUser,
             <div className="user-details">
               <span className="name">{user.displayName}</span>
               <span className="status">
-                {onlineUsers.includes(user.id) ? 'Online' : 'Offline'}
+                {onlineUsers.includes(user.id) ? 'Online' : `Last seen ${formatLastSeen(user.lastSeen)}`}
               </span>
             </div>
             {unreadMessages[user.id] > 0 && (
