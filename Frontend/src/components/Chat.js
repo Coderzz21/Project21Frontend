@@ -3,7 +3,7 @@ import MessageBubble from './MessageBubble';
 import EmojiPickerComponent from './EmojiPickerComponent';
 import FileUpload from './FileUpload';
 import ImageModal from './ImageModal';
-import { formatDateIST, formatLastSeen } from '../utils/timeUtils';
+import { formatDateIST } from '../utils/timeUtils';
 import './Chat.css';
 
 function Chat({ socket, currentUser, selectedUser, onlineUsers, backendUrl, onBack, isMobileView }) {
@@ -173,7 +173,7 @@ function Chat({ socket, currentUser, selectedUser, onlineUsers, backendUrl, onBa
             <span className="chat-status">
               {peerTyping
                 ? 'typing...'
-                : onlineUsers.includes(selectedUser.id) ? 'Online' : formatLastSeen(selectedUser.lastSeen)}
+                : onlineUsers.includes(selectedUser.id) ? 'Online' : 'Offline'}
             </span>
           </div>
         </div>
